@@ -3,3 +3,14 @@ spring:
     mongodb:
       host:
       uri: mongodb://118.31.20.148:27017/storage
+  dubbo:
+    application:
+      name: storage-service
+    registry:
+      address: zookeeper://118.31.20.148:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.hup.everest.storage.service.impl
+
+

@@ -1,10 +1,6 @@
-package com.hup.everest.storage.service.impl;/**
- * @author: hupeng
- * @create: 2018-10-06 21:23
- * @version 1.0
- * @description:
- **/
+package com.hup.everest.storage.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.hup.everest.storage.model.Storage;
 import com.hup.everest.storage.repository.StorageRepository;
 import com.hup.everest.storage.service.StorageService;
@@ -21,7 +17,6 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
@@ -35,7 +30,7 @@ import java.io.InputStream;
  * @create: 2018-10-06 21:23
  * @description:
  **/
-@Service
+@Service(version = "1.0.0")
 public class StorageServiceImpl implements StorageService {
 
     @Autowired
@@ -48,7 +43,6 @@ public class StorageServiceImpl implements StorageService {
     private MongoDbFactory mongoDbFactory;
 
 
-    @Override
     public String upload(MultipartFile multipartFile) {
         String originalFilename = multipartFile.getOriginalFilename();
         String contentType = multipartFile.getContentType();
@@ -63,7 +57,6 @@ public class StorageServiceImpl implements StorageService {
         return store.toString();
     }
 
-    @Override
     public ResponseEntity download(String objectId) {
         Storage storage = getStorage(objectId);
         InputStreamResource inputStreamResource = new InputStreamResource(storage.getContent());
@@ -75,7 +68,6 @@ public class StorageServiceImpl implements StorageService {
                 .body(inputStreamResource);
     }
 
-    @Override
     public ResponseEntity preview(String objectId) {
         Storage storage = getStorage(objectId);
         InputStreamResource inputStreamResource = new InputStreamResource(storage.getContent());
