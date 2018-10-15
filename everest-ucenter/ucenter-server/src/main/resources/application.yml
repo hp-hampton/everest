@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://118.31.20.148:3306/business_cornerstone?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

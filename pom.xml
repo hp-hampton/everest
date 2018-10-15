@@ -10,6 +10,7 @@
     <modules>
         <module>everest-storage</module>
         <module>everest-mail</module>
+        <module>everest-ucenter</module>
     </modules>
 
     <repositories>

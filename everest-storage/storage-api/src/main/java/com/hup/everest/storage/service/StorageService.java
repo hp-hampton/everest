@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @description:
  **/
 public interface StorageService {
+
     String upload(MultipartFile multipartFile);
 
     ResponseEntity download(String objectId);
