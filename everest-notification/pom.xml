@@ -9,7 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>everest-mail</artifactId>
+    <artifactId>everest-notification</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>notification-api</module>
+        <module>notification-server</module>
+    </modules>
 
 
 </project>

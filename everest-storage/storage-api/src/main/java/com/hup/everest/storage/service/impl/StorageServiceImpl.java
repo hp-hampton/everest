@@ -1,6 +1,5 @@
 package com.hup.everest.storage.service.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.hup.everest.storage.model.Storage;
 import com.hup.everest.storage.repository.StorageRepository;
 import com.hup.everest.storage.service.StorageService;
@@ -17,6 +16,7 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
@@ -30,14 +30,11 @@ import java.io.InputStream;
  * @create: 2018-10-06 21:23
  * @description:
  **/
-@Service(version = "1.0.0")
+@Service
 public class StorageServiceImpl implements StorageService {
 
     @Autowired
     private GridFsTemplate gridFsTemplate;
-
-    @Autowired
-    private StorageRepository storageRepository;
 
     @Autowired
     private MongoDbFactory mongoDbFactory;
