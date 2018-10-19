@@ -2,7 +2,6 @@ package com.hup.everest.storage;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  * @version 1.0
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
  * @description:
  **/
 @SpringBootApplication
-@CrossOrigin
 public class StorageApplication {
     public static void main(String[] args) {
         SpringApplication.run(StorageApplication.class, args);

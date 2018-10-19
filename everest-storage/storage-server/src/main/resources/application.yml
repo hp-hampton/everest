@@ -13,4 +13,5 @@ spring:
 #      port: 20880
 #    scan: com.hup.everest.storage.service.impl
 
-
+server:
+  port: 9999

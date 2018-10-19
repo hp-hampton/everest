@@ -2,7 +2,25 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://118.31.20.148:3306/business_cornerstone?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
-
+    url: jdbc:mysql://118.31.20.148:3306/everest?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+  redis:
+    host: 118.31.20.148
+    port: 6378
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: ${AUTH_SERVICE_URL:http://localhost:8050}/oauth/check_token
+    client:
+      client-id: pampas
+      client-secret: pampas
+
+#da打印日志
+logging:
+  level:
+    com:
+      hup: debug
+server:
+  port: 8050

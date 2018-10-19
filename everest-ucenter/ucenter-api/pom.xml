@@ -26,5 +26,10 @@
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>com.hup.everest</groupId>
+            <artifactId>ucenter-model</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

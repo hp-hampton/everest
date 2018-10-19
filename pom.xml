@@ -7,6 +7,11 @@
     <artifactId>everest</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>com.hup</groupId>
+        <artifactId>hup-framework</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modules>
         <module>everest-storage</module>
         <module>everest-ucenter</module>
@@ -52,6 +57,10 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.hup</groupId>-->
+            <!--<artifactId>advice-starter</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <dependencyManagement>
