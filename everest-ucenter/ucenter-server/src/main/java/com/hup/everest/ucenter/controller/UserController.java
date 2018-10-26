@@ -1,10 +1,13 @@
 package com.hup.everest.ucenter.controller;
 
+import com.hup.everest.ucenter.GlobalUser;
 import com.hup.everest.ucenter.dto.GlobalUserDto;
 import com.hup.everest.ucenter.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 /**
  * @author hupeng on 2018/10/19
@@ -25,10 +28,5 @@ public class UserController {
     public void register(@RequestBody GlobalUserDto globalUserDto) {
         globalUserDto.setPassword(passwordEncoder.encode(globalUserDto.getPassword()));
         userService.register(globalUserDto);
-    }
-
-    @GetMapping
-    public String test() {
-        return "hello";
     }
 }

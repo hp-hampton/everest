@@ -18,6 +18,7 @@
         <module>everest-notification</module>
     </modules>
 
+
     <repositories>
         <repository>
             <id>nexus</id>

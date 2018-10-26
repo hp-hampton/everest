@@ -9,13 +9,15 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
-security:
-  oauth2:
-    resource:
-      token-info-uri: ${AUTH_SERVICE_URL:http://localhost:8050}/oauth/check_token
-    client:
-      client-id: pampas
-      client-secret: pampas
+#security:
+#  oauth2:
+#    storeType: redis
+#    resource:
+#      token-info-uri: ${AUTH_SERVICE_URL:http://localhost:8050}/oauth/check_token
+#    client:
+#      client-id: pampas
+#      client-secret: pampas
+#      scope: read
 
 #da打印日志
 logging:
@@ -24,3 +26,13 @@ logging:
       hup: debug
 server:
   port: 8050
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+

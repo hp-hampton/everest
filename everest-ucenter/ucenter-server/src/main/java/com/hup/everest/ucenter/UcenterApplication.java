@@ -14,6 +14,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan("com.hup.everest.ucenter.mapper")
 @SpringBootApplication
 @EnableTransactionManagement
+@EnableResourceServer
 public class UcenterApplication {
 
     public static void main(String[] args) {

@@ -1,7 +1,9 @@
 package com.hup.everest.ucenter.config;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -17,6 +19,7 @@ import java.util.Objects;
  * @Date 2018/8/27 下午6:22
  */
 @Configuration
+@Order(SecurityProperties.BASIC_AUTH_ORDER)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
@@ -29,23 +32,29 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     //新版PasswordEncoder
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return new PasswordEncoder() {
+//            @Override
+//            public String encode(CharSequence charSequence) {
+//                return charSequence.toString();
+//            }
+//
+//            @Override
+//            public boolean matches(CharSequence charSequence, String s) {
+//                return Objects.equals(charSequence.toString(), s);
+//            }
+//        };
+//    }
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new PasswordEncoder() {
-            @Override
-            public String encode(CharSequence charSequence) {
-                return charSequence.toString();
-            }
-
-            @Override
-            public boolean matches(CharSequence charSequence, String s) {
-                return Objects.equals(charSequence.toString(), s);
-            }
-        };
+        return new BCryptPasswordEncoder();
     }
-//    @Bean
-//    PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
+
+//    public static void main(String[] args) {
+//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        String pampas = passwordEncoder.encode("pampas");
+//        System.out.println(pampas);
 //    }
 
 }
