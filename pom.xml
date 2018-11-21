@@ -16,6 +16,8 @@
         <module>everest-storage</module>
         <module>everest-ucenter</module>
         <module>everest-notification</module>
+        <module>everest-auth</module>
+        <module>everest-demo</module>
     </modules>
 
 
